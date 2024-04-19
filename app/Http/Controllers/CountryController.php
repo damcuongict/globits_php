@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CountryRequest;
 use Illuminate\Http\Request;
 use App\Services\CountryService;
 
@@ -25,7 +26,7 @@ class CountryController extends Controller
         return view('countries.create');
     }
 
-    public function store(Request $request)
+    public function store(CountryRequest  $request)
     {
         $this->countryService->create($request->all());
         return redirect()->route('countries.index');
@@ -37,7 +38,7 @@ class CountryController extends Controller
         return view('countries.edit', compact('country'));
     }
 
-    public function update(Request $request, $id)
+    public function update(CountryRequest  $request, $id)
     {
         $this->countryService->update($id, $request->all());
         return redirect()->route('countries.index');

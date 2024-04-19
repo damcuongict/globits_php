@@ -23,7 +23,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="{{ route('countries.index') }}">Home</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{ route('countries.index') }}">countries</a>
@@ -36,7 +36,7 @@
        
 
         @yield('web-content')
-        <div class="Footer mt-3 mb-3 text-center">Đàm Văn Cương</div>
+        <div class="Footer mt-3 mb-3 text-center"></div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

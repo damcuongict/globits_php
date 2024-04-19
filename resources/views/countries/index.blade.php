@@ -3,7 +3,7 @@
 @section('web-content')
 <div class="container">
     <h1>Danh sách quốc gia</h1>
-    <a href="{{ route('countries.create') }}" class="btn btn-primary mb-2">Tạo mới</a>
+    <a href="{{ route('countries.create') }}" class="btn btn-primary mb-2">Thêm mới</a>
     <table class="table">
         <thead>
             <tr>
@@ -11,7 +11,7 @@
                 <th scope="col">Mã</th>
                 <th scope="col">Tên</th>
                 <th scope="col">Mô tả</th>
-                <th scope="col">Hành động</th>
+                <th scope="col">Thao tác</th>
             </tr>
         </thead>
         <tbody>
@@ -22,7 +22,7 @@
                 <td>{{ $country->name }}</td>
                 <td>{{ $country->description }}</td>
                 <td>
-                    <a href="{{ route('countries.edit', $country->id) }}" class="btn btn-primary">Chỉnh sửa</a>
+                    <a href="{{ route('countries.edit', $country->id) }}" class="btn btn-warning">Sửa</a>
                     <form id="delete-form-{{ $country->id }}" action="{{ route('countries.destroy', $country->id) }}" method="POST" style="display: inline;">
                         @csrf
                         @method('DELETE')
