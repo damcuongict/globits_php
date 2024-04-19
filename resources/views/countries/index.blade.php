@@ -5,19 +5,19 @@
     <h1>Danh sách quốc gia</h1>
     <a href="{{ route('countries.create') }}" class="btn btn-primary mb-2">Thêm mới</a>
     <table class="table">
-        <thead>
+        <thead >
             <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Mã</th>
-                <th scope="col">Tên</th>
-                <th scope="col">Mô tả</th>
-                <th scope="col">Thao tác</th>
+                <th >ID</th>
+                <th >Mã</th>
+                <th >Tên</th>
+                <th >Mô tả</th>
+                <th >Thao tác</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($countries as $country)
             <tr>
-                <th scope="row">{{ $country->id }}</th>
+                <th >{{ $country->id }}</th>
                 <td>{{ $country->code }}</td>
                 <td>{{ $country->name }}</td>
                 <td>{{ $country->description }}</td>

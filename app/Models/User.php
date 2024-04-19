@@ -17,11 +17,7 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    protected $fillable = ['email', 'password', 'is_active'];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -32,6 +28,10 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+    public function person()
+    {
+        return $this->belongsTo(Person::class);
+    }
 
     /**
      * The attributes that should be cast.
