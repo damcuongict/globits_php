@@ -1,6 +1,6 @@
 @extends('layout.web')
 
-@section('web-content')
+@section('content')
 <div class="container">
     <h1>Thêm mới quốc gia</h1>
     <form method="POST" action="{{ route('countries.store') }}">

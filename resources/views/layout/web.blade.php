@@ -26,13 +26,19 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('countries.index') }}">countries</a>
                         </li>            
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('users.index') }}">Users</a>
+                        </li>            
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('people.index') }}">people</a>
+                        </li>            
                     </ul>
                 </div>
             </div>
         </nav>
     </div>
 
-    @yield('web-content')
+    @yield('content')
     <div class="Footer mt-3 mb-3 text-center"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

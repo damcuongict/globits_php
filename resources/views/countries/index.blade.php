@@ -1,6 +1,6 @@
 @extends('layout.web')
 
-@section('web-content')
+@section('content')
 <div class="container">
     <h1>Danh sách quốc gia</h1>
     <a href="{{ route('countries.create') }}" class="btn btn-primary mb-2">Thêm mới</a>
