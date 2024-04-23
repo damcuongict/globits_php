@@ -11,10 +11,11 @@ class UserRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize(): bool
     {
-        return true; 
+        return true;
     }
+
 
     /**
      * Get the validation rules that apply to the request.
@@ -24,10 +25,22 @@ class UserRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users|max:255',
             'password' => 'required|string|min:8|max:255',
+            'is_active' => 'required|boolean',
             
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'name.required' => 'Bạn chưa nhập tên.',
+            'email.required' => 'Bạn chưa nhập email.',
+            'password.required' => 'Bạn chưa nhập mật khẩu.',
+            'email.email' => 'Email không hợp lệ.',
+            'email.unique' => 'Email đã tồn tại.',
+            'password.min' => 'Mật khẩu phải có ít nhất 8 ký tự.',
+            'password.max' => 'Mật khẩu không được vượt quá 255 ký tự.',
         ];
     }
 }

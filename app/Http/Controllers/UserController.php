@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UserRequest;
+use Illuminate\Http\Request;
 use App\Services\UserService;
 
 class UserController extends Controller
@@ -27,8 +28,9 @@ class UserController extends Controller
 
     public function store(UserRequest $request)
     {
-        $data = $request->validated();
-        $this->userService->createUser($data);
+      
+
+        $this->userService->createUser($request->all());
         return redirect()->route('users.index')->with('success', 'User created successfully.');
     }
 
@@ -40,8 +42,7 @@ class UserController extends Controller
 
     public function update(UserRequest $request, $id)
     {
-        $data = $request->validated();
-        $this->userService->updateUser($id, $data);
+        $this->userService->updateUser($id, $request->all());
         return redirect()->route('users.index')->with('success', 'User updated successfully.');
     }
 

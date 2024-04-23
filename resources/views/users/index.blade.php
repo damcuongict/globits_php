@@ -21,7 +21,7 @@
                             <td>{{ $user->id }}</td>
                             <td>{{ $user->email }}</td>
                             <td>
-                                <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-primary">Chỉnh sửa</a>
+                                <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-warning">Sửa</a>
                                 <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display: inline-block;">
                                     @csrf
                                     @method('DELETE')

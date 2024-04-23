@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class UserRepository
 {
@@ -18,16 +19,21 @@ class UserRepository
 
     public function create(array $data)
     {
+        $data['password'] = Hash::make($data['password']);
         return User::create($data);
     }
 
-    public function update(User $user, array $data)
+    public function update($id, array $data)
     {
-        return $user->update($data);
+        $user = User::findOrFail($id);
+        $user->update($data);
+        return $user;
     }
 
-    public function delete(User $user)
+    public function delete($id)
     {
-        return $user->delete();
+        $user = User::findOrFail($id);
+        $user->delete();
+        return $user;
     }
 }

@@ -30,19 +30,11 @@ class UserService
 
     public function updateUser($id, array $data)
     {
-        $user = $this->getUserById($id);
-        if ($user) {
-            return $this->userRepository->update($user, $data);
-        }
-        return false;
+        return $this->userRepository->update($id, $data);
     }
 
     public function deleteUser($id)
     {
-        $user = $this->getUserById($id);
-        if ($user) {
-            return $this->userRepository->delete($user);
-        }
-        return false;
+        return $this->userRepository->delete($id);
     }
 }

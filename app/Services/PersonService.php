@@ -12,13 +12,16 @@ class PersonService
     {
         $this->personRepository = $personRepository;
     }
-
-    public function getAllPeople()
+    public function getAllPersonsWithUser()
+{
+    return $this->personRepository->getAllPersonsWithUser();
+}
+    public function getAllPersons()
     {
         return $this->personRepository->all();
     }
 
-    public function createPerson(array $data)
+    public function create(array $data)
     {
         return $this->personRepository->create($data);
     }
@@ -28,21 +31,13 @@ class PersonService
         return $this->personRepository->find($id);
     }
 
-    public function updatePerson($id, array $data)
+    public function update($id, array $data)
     {
-        $person = $this->getPersonById($id);
-        if ($person) {
-            return $this->personRepository->update($person, $data);
-        }
-        return false;
+        return $this->personRepository->update($id, $data);
     }
 
-    public function deletePerson($id)
+    public function delete($id)
     {
-        $person = $this->getPersonById($id);
-        if ($person) {
-            return $this->personRepository->delete($person);
-        }
-        return false;
+        return $this->personRepository->delete($id);
     }
 }

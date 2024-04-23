@@ -25,13 +25,13 @@ Route::get('/countries/{id}/edit', [CountryController::class, 'edit'])->name('co
 Route::put('/countries/{id}', [CountryController::class, 'update'])->name('countries.update');
 Route::delete('/countries/{id}', [CountryController::class, 'destroy'])->name('countries.destroy');
 
-// Routes cho quản lý người (people)
-Route::get('/people', [PersonController::class, 'index'])->name('people.index');
-Route::get('/people/create', [PersonController::class, 'create'])->name('people.create');
-Route::post('/people', [PersonController::class, 'store'])->name('people.store');
-Route::get('/people/{person}/edit', [PersonController::class, 'edit'])->name('people.edit');
-Route::put('/people/{person}', [PersonController::class, 'update'])->name('people.update');
-Route::delete('/people/{person}', [PersonController::class, 'destroy'])->name('people.destroy');
+// Routes cho quản lý người (persons)
+Route::get('/persons', [PersonController::class, 'index'])->name('persons.index');
+Route::get('/persons/create', [PersonController::class, 'create'])->name('persons.create');
+Route::post('/persons', [PersonController::class, 'store'])->name('persons.store');
+Route::get('/persons/{person}/edit', [PersonController::class, 'edit'])->name('persons.edit');
+Route::put('/persons/{person}', [PersonController::class, 'update'])->name('persons.update');
+Route::delete('/persons/{person}', [PersonController::class, 'destroy'])->name('persons.destroy');
 
 // Routes cho quản lý người dùng (users)
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
