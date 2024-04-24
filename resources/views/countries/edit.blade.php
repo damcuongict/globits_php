@@ -1,8 +1,10 @@
 @extends('layout.web')
 
 @section('content')
-<div class="container">
-    <h1>Chỉnh sửa quốc gia</h1>
+<div class="container" style="margin-top: 1cm;">
+<div class="card">
+<div class="card-header">Chỉnh sửa quốc gia</div>
+<div class="card-body">
     <form method="POST" action="{{ route('countries.update', $country->id) }}">
         @csrf
         @method('PUT')
@@ -26,5 +28,6 @@
         </div>
         <button type="submit" class="btn btn-primary">Cập nhật</button>
     </form>
+</div>
 </div>
 @endsection

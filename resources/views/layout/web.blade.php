@@ -24,13 +24,16 @@
                             <a class="nav-link active" aria-current="page" href="{{ route('countries.index') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('countries.index') }}">countries</a>
+                            <a class="nav-link" href="{{ route('countries.index') }}">Countries</a>
                         </li>            
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('users.index') }}">Users</a>
                         </li>            
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('persons.index') }}">persons</a>
+                            <a class="nav-link" href="{{ route('persons.index') }}">Persons</a>
+                        </li>            
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('companies.index') }}">Companies</a>
                         </li>            
                     </ul>
                 </div>

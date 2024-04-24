@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CompanyController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\PersonController;
@@ -40,3 +41,11 @@ Route::post('/users', [UserController::class, 'store'])->name('users.store');
 Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
 Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
 Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+
+// Routes cho quản lý cônng ty (Company)
+Route::get('/companies', [CompanyController::class, 'index'])->name('companies.index');
+Route::get('/companies/create', [CompanyController::class, 'create'])->name('companies.create');
+Route::post('/companies', [CompanyController::class, 'store'])->name('companies.store');
+Route::get('/companies/{id}/edit', [CompanyController::class, 'edit'])->name('companies.edit');
+Route::put('/companies/{id}', [CompanyController::class, 'update'])->name('companies.update');
+Route::delete('/companies/{id}', [CompanyController::class, 'destroy'])->name('companies.destroy');
