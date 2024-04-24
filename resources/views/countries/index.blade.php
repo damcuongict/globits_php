@@ -6,7 +6,6 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">Danh sách Quốc gia</div>
-
                     <div class="card-body">
                         <a href="{{ route('countries.create') }}" class="btn btn-primary mb-3">Thêm mới quốc gia</a>
 

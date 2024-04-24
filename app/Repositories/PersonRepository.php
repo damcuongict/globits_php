@@ -3,12 +3,17 @@
 namespace App\Repositories;
 
 use App\Models\Person;
+use App\Models\User;
 
 class PersonRepository
 {
     public function all()
     {
         return Person::all();
+    }
+     public function getUnlinkedUsers()
+    {
+        return User::whereNotIn('id', Person::pluck('user_id'))->get();
     }
     public function getAllPersonsWithUser()
     {

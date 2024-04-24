@@ -12,10 +12,14 @@ class PersonService
     {
         $this->personRepository = $personRepository;
     }
+    public function getUnlinkedUsers()
+    {
+        return $this->personRepository->getUnlinkedUsers();
+    }
     public function getAllPersonsWithUser()
-{
-    return $this->personRepository->getAllPersonsWithUser();
-}
+    {
+        return $this->personRepository->getAllPersonsWithUser();
+    }
     public function getAllPersons()
     {
         return $this->personRepository->all();

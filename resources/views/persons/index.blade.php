@@ -18,6 +18,7 @@
                                     <th scope="col">Số điện thoại</th>
                                     <th scope="col">Địa chỉ</th>
                                     <th scope="col">Email</th>                 
+                                    <th scope="col">Công ty</th>                 
                                     <th scope="col">Hành động</th>
                                 </tr>
                             </thead>
@@ -31,6 +32,7 @@
                                     <td>{{ $person->phone_number }}</td>
                                     <td>{{ $person->address }}</td>
                                     <td>{{ $person->user ? $person->user->email : 'N/A' }}</td>
+                                    <td>{{ $person->company ? $person->company->name : 'N/A' }}</td>
                                     <td>
                                         <a href="{{ route('persons.edit', $person->id) }}" class="btn btn-sm btn-warning">Sửa</a>
                                         <form action="{{ route('persons.destroy', $person->id) }}" method="POST" style="display: inline-block;">

@@ -24,12 +24,14 @@ class PersonRequest extends FormRequest
     public function rules()
     {
         return [
+            'email' => 'required|email',
             'user_id' => 'required|exists:users,id',
             'full_name' => 'required|string|max:255',
             'gender' => 'required|string|in:Male,Female',
             'birthdate' => 'required|date',
             'phone_number' => 'required|string|max:20',
             'address' => 'required|string|max:255',
+            'company_id' => 'required|exists:companies,id',
         ];
     }
 
@@ -57,6 +59,8 @@ class PersonRequest extends FormRequest
             'address.required' => 'Vui lòng nhập địa chỉ.',
             'address.string' => 'Địa chỉ phải là chuỗi.',
             'address.max' => 'Địa chỉ không được vượt quá 255 ký tự.',
+            'company_id.required' => 'Vui lòng chọn công ty.',
+            'company_id.exists' => 'Công ty không hợp lệ.',
         ];
     }
 }
