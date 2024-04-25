@@ -26,11 +26,11 @@ class PersonController extends Controller
         return view('persons.index', compact('persons'));
     }
     public function create()
-{
-    $users = $this->personService->getUnlinkedUsers();
-    $companies = $this->companyService->getAllCompanies();
-    return view('persons.create', compact('users','companies'));
-}
+    {
+        $users = $this->personService->getUnlinkedUsers();
+        $companies = $this->companyService->getAllCompanies();
+        return view('persons.create', compact('users','companies'));
+    }
 
     public function store(PersonRequest $request)
     {     
@@ -47,7 +47,6 @@ class PersonController extends Controller
     }
     public function update(PersonRequest $request, $id)
     {
-
         $this->personService->update($id,$request->all());
         return redirect()->route('persons.index');
     }

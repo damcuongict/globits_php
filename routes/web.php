@@ -4,6 +4,7 @@ use App\Http\Controllers\CompanyController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\PersonController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 
 /*
@@ -49,3 +50,11 @@ Route::post('/companies', [CompanyController::class, 'store'])->name('companies.
 Route::get('/companies/{id}/edit', [CompanyController::class, 'edit'])->name('companies.edit');
 Route::put('/companies/{id}', [CompanyController::class, 'update'])->name('companies.update');
 Route::delete('/companies/{id}', [CompanyController::class, 'destroy'])->name('companies.destroy');
+
+// Routes cho quản lý vai trò (Role)
+Route::get('/roles', [RoleController::class, 'index'])->name('roles.index');
+Route::get('/roles/create', [RoleController::class, 'create'])->name('roles.create');
+Route::post('/roles', [RoleController::class, 'store'])->name('roles.store');
+Route::get('/roles/{id}/edit', [RoleController::class, 'edit'])->name('roles.edit');
+Route::put('/roles/{id}', [RoleController::class, 'update'])->name('roles.update');
+Route::delete('/roles/{id}', [RoleController::class, 'destroy'])->name('roles.destroy');

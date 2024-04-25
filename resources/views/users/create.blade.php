@@ -8,6 +8,20 @@
                 <form method="POST" action="{{ route('users.store') }}">
                     @csrf
                     <div class="form-group">
+                            <label for="roles">Vai trò</label>
+                            <select class="form-control" id="roles" name="roles">
+                                <option value="">Chọn Vai trò</option>
+                                @foreach($roles as $role)
+                                    <option value="{{ $role->id }}" {{ old('roles') && in_array($role->id, old('roles')) ? 'selected' : '' }}>
+                                        {{ $role->role }}
+                                    </option>
+                                @endforeach
+                            </select>
+                            @error('roles')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}" >
                         @error('email')

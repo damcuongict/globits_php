@@ -23,7 +23,8 @@ class UserController extends Controller
 
     public function create()
     {
-        return view('users.create');
+        $roles = $this->userService->getAllRoles();
+        return view('users.create', compact('roles'));
     }
 
     public function store(UserRequest $request)
@@ -37,13 +38,14 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = $this->userService->getUserById($id);
-        return view('users.edit', compact('user'));
+        $roles = $this->userService->getAllRoles();
+        return view('users.edit', compact('user','roles'));
     }
 
     public function update(UserRequest $request, $id)
     {
         $this->userService->updateUser($id, $request->all());
-        return redirect()->route('users.index')->with('success', 'User updated successfully.');
+        return redirect()->route('users.index');
     }
 
     public function destroy($id)

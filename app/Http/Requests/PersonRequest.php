@@ -24,8 +24,6 @@ class PersonRequest extends FormRequest
     public function rules()
     {
         return [
-            'email' => 'required|email',
-            'user_id' => 'required|exists:users,id',
             'full_name' => 'required|string|max:255',
             'gender' => 'required|string|in:Male,Female',
             'birthdate' => 'required|date',
