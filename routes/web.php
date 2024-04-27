@@ -3,6 +3,7 @@
 use App\Http\Controllers\CompanyController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CountryController;
+use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\PersonController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
@@ -58,3 +59,12 @@ Route::post('/roles', [RoleController::class, 'store'])->name('roles.store');
 Route::get('/roles/{id}/edit', [RoleController::class, 'edit'])->name('roles.edit');
 Route::put('/roles/{id}', [RoleController::class, 'update'])->name('roles.update');
 Route::delete('/roles/{id}', [RoleController::class, 'destroy'])->name('roles.destroy');
+
+// Routes cho quản lý phòng ban (Department)
+Route::get('/departments', [DepartmentController::class, 'index'])->name('departments.index');
+Route::get('/departments/create', [DepartmentController::class, 'create'])->name('departments.create');
+Route::post('/departments', [DepartmentController::class, 'store'])->name('departments.store');
+Route::get('/departments/{id}/edit', [DepartmentController::class, 'edit'])->name('departments.edit');
+Route::put('/departments/{id}', [DepartmentController::class, 'update'])->name('departments.update');
+Route::delete('/departments/{id}', [DepartmentController::class, 'destroy'])->name('departments.destroy');
+
